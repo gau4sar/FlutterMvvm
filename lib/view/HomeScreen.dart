@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:mvvm_flutter/models/login/UserModel.dart';
 import 'package:mvvm_flutter/res/components/InternetException.dart';
+import 'package:mvvm_flutter/res/routes/routes_name.dart';
 import 'package:mvvm_flutter/view_models/controller/home/HomeViewModel.dart';
 import 'package:mvvm_flutter/view_models/controller/user_preferences/user_preferences_view_model.dart';
 
@@ -33,7 +34,11 @@ class _HomeScreenState extends State<HomeScreen> {
           actions: [
             IconButton(
                 onPressed: () {
-                  userPreferences.clear();
+                  userPreferences.clear().then((value) {
+                    //Get.toNamed(RouteName.loginScreen);
+
+                    Get.offNamed(RouteName.loginScreen);
+                  });
                 },
                 icon: Icon(Icons.logout))
           ],

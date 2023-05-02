@@ -48,6 +48,7 @@ class NetworkApiServices extends BaseApiServices {
           await http.post(Uri.parse(url), body: data).timeout(const Duration(seconds: 10));
 
       responseJson = returnResponse(response);
+      print(responseJson);
     } on SocketException {
       throw InternetException('');
     } on RequestTimeOut {
@@ -61,6 +62,7 @@ class NetworkApiServices extends BaseApiServices {
   }
 
   dynamic returnResponse(http.Response response) {
+    print(response);
     switch (response.statusCode) {
       case 200:
         dynamic responseJson = jsonDecode(response.body);

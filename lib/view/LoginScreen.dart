@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mvvm_flutter/utils/Utils.dart';
 import 'package:mvvm_flutter/utils/app_colors.dart';
-import 'package:mvvm_flutter/view_models/controller/LoginViewModel.dart';
+import 'package:mvvm_flutter/view_models/controller/login/LoginViewModel.dart';
 import 'package:get/get.dart';
 import '../res/components/RoundButton.dart';
 
